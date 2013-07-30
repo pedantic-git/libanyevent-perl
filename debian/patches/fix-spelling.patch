@@ -1,0 +1,29 @@
+Description: Fix a spelling error found by lintian
+Origin: vendor
+Author: Alessandro Ghedini <al3xbio@gmail.com>
+Reviewed-by: Nicholas Bamber <nicholas@periapt.co.uk>
+Last-Update: 2012-05-16
+Forwarded: mailto:anyevent@lists.schmorp.de
+
+--- a/lib/AnyEvent.pm
++++ b/lib/AnyEvent.pm
+@@ -434,7 +434,7 @@
+ C libraries for this. AnyEvent will try to do its best, which
+ means in some cases, signals will be delayed. The maximum time
+ a signal might be delayed is 10 seconds by default, but can
+-be overriden via C<$ENV{PERL_ANYEVENT_MAX_SIGNAL_LATENCY}> or
++be overridden via C<$ENV{PERL_ANYEVENT_MAX_SIGNAL_LATENCY}> or
+ C<$AnyEvent::MAX_SIGNAL_LATENCY> - see the L<ENVIRONMENT VARIABLES>
+ section for details.
+ 
+--- a/lib/AnyEvent/Handle.pm
++++ b/lib/AnyEvent/Handle.pm
+@@ -1783,7 +1783,7 @@
+ dtection, make sure that any non-TLS data doesn't start with the octet 22
+ (ASCII SYN, 16 hex) or 128-255 (i.e. highest bit set). The checks this
+ read type does are a bit more strict, but might losen in the future to
+-accomodate protocol changes.
++accommodate protocol changes.
+ 
+ This read type does not rely on L<AnyEvent::TLS> (and thus, not on
+ L<Net::SSLeay>).

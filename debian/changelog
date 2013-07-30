@@ -1,0 +1,445 @@
+libanyevent-perl (7.040-1) unstable; urgency=low
+
+  * Imported Upstream version 7.040
+  * Bump Standards-Version to 3.9.4
+  * Use debhelper 8 instead of 9 (non binary)
+  * Update copyright years
+
+ -- Xavier Guimard <x.guimard@free.fr>  Sun, 02 Dec 2012 09:03:32 +0100
+
+libanyevent-perl (7.020-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Wed, 15 Aug 2012 18:33:44 +0200
+
+libanyevent-perl (7.010-1) unstable; urgency=low
+
+  * New upstream release
+  * Update fix-spelling.patch
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Wed, 16 May 2012 12:03:38 +0200
+
+libanyevent-perl (7.000-1) unstable; urgency=low
+
+  * New upstream release
+  * Email change: Alessandro Ghedini -> ghedo@debian.org
+  * Refresh fix-spelling.patch
+  * Drop use-tlsv1-in-test.patch (fixed upstream)
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Tue, 08 May 2012 15:22:47 +0200
+
+libanyevent-perl (6.140-2) unstable; urgency=low
+
+  * Add use-tlsv1-in-test.patch (Closes: #665233)
+  * Bump debhelper compat level to 9
+  * Update debian/copyright format as in Debian Policy 3.9.3
+  * Bump Standards-Version to 3.9.3
+  * Remove lintian override about outdated DEP5
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Tue, 27 Mar 2012 12:20:10 +0200
+
+libanyevent-perl (6.140-1) unstable; urgency=low
+
+  * New upstream release
+  * Added lintian override about DEP-5 format
+  * Reviewed spelling patch
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 17 Feb 2012 16:40:49 +0000
+
+libanyevent-perl (6.130-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Thu, 12 Jan 2012 22:10:04 +0100
+
+libanyevent-perl (6.120-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update years of packaging copyright.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 13 Dec 2011 18:13:04 +0100
+
+libanyevent-perl (6.110-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 26 Nov 2011 16:31:48 +0100
+
+libanyevent-perl (6.100-2) unstable; urgency=low
+
+  * Add libev-perl to Build-Depends and Suggests
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Tue, 22 Nov 2011 14:49:49 +0100
+
+libanyevent-perl (6.100-1) unstable; urgency=low
+
+  * New upstream release
+  * Update debian/NEWS with incompatible changes
+  * Add fix-spelling.patch to fix a spelling error
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Wed, 05 Oct 2011 16:52:34 +0200
+
+libanyevent-perl (6.020-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Sat, 27 Aug 2011 12:12:26 +0200
+
+libanyevent-perl (6.010-1) unstable; urgency=low
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Salvatore Bonaccorso ]
+  * debian/copyright: Replace DEP5 Format-Specification URL from
+    svn.debian.org to anonscm.debian.org URL.
+
+  [ Alessandro Ghedini ]
+  * New upstream release
+  * Update upstream copyright years
+  * Re-order (Build-)Depends
+  * Add debian/NEWS with incompatible changes and deprecations
+  * Move libasync-interrupt-perl to Suggests
+  * Add libtask-weaken-perl to Suggests
+  * Run loop tests
+  * Add libevent-perl, libglib-perl, libio-async-perl, libnet-ssleay-perl, 
+    libpoe-perl and perl-tk to Build-Depends (needed by tests) and Suggests
+  * Run tests under xvfb (due to Tk tests), update Build-Depends accordingly
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Fri, 26 Aug 2011 14:41:42 +0200
+
+libanyevent-perl (5.340-1) unstable; urgency=low
+
+  [ Alessandro Ghedini ]
+  * New upstream release
+  * Bump debhelper compat level to 8
+  * Bump Standards-Version to 3.9.2 (no changes needed)
+  * Add myself to Uploaders
+
+  [ gregor herrmann ]
+  * Remove version from libnet-ssleay-perl in Suggests, already satisfied in
+    oldstable.
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Thu, 12 May 2011 17:00:29 +0200
+
+libanyevent-perl (5.310-1) unstable; urgency=low
+
+  * New upstream release
+  * Email change: Ansgar Burchardt -> ansgar@debian.org
+  * Email change: gregor herrmann -> gregoa@debian.org
+  * Email change: Jonathan Yu -> jawnsy@cpan.org
+  * Refreshed copyright using local version of dh-make-perl (cf. #609409)
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Mon, 24 Jan 2011 23:33:01 +0000
+
+libanyevent-perl (5.300-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+  * Remove POD patch, no longer needed
+  * Because constants.pl is arch-dependent, all files are now installed
+    in /usr/lib
+
+  [ Ansgar Burchardt ]
+  * Add copyright information for lib/AnyEvent/Impl/Cocoa.pm.
+  * debian/rules: No longer move constants.pl: already installed to /usr/lib
+    by default.
+  * Override package-installs-nonbinary-perl-in-usr-lib-perl5 lintian warning
+    for all files in /usr/lib/perl5, not only for constants.pl.
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sat, 01 Jan 2011 00:04:09 -0500
+
+libanyevent-perl (5.290-1) unstable; urgency=low
+
+  * New upstream release
+  * Added patch to fix pod format issues
+  * Added generated file to clean list
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Sat, 11 Dec 2010 16:11:51 +0000
+
+libanyevent-perl (5.280-1) unstable; urgency=low
+
+  [ Nicholas Bamber ]
+  * Added myself to Uploaders
+  * New upstream release
+  * Rewrote short description
+  * Refreshed copyright: spec line and remove 'GNU/Linux'
+
+  [ Ansgar Burchardt ]
+  * Update my email address.
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Wed, 20 Oct 2010 21:57:18 +0100
+
+libanyevent-perl (5.271-2) unstable; urgency=low
+
+  * debian/control: convert package to arch:any, there are architecture
+    specific constants since 5.25; thanks a lot to Niko Tyni for the debugging!
+    debian/rules: install AnyEvent/constants.pl into /usr/lib/perl5. Add a
+    lintian override addressing this move.
+    Closes: #596257.
+  * Set Standards-Version to 3.9.1 (no changes).
+  * debian/copyright: refresh License stanzas; update list of copyright
+    holders for debian/*.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 09 Sep 2010 22:43:18 +0200
+
+libanyevent-perl (5.271-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 12 Jun 2010 15:58:26 +0200
+
+libanyevent-perl (5.270-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ansgar Burchardt <ansgar@43-1.org>  Sun, 06 Jun 2010 22:13:37 +0900
+
+libanyevent-perl (5.260-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 16 Apr 2010 21:17:55 +0200
+
+libanyevent-perl (5.251-1) unstable; urgency=low
+
+  * New upstream release
+  * Standards-Version 3.8.4 (no changes)
+  * Use new 3.0 (quilt) source format
+  * Drop POD spelling patch applied upstream
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sat, 13 Mar 2010 15:13:36 -0500
+
+libanyevent-perl (5.240-1) unstable; urgency=low
+
+  * New upstream release
+  * Remove perl-path patch, replace with override
+  * Add a patch to correct POD spelling errors
+  * Update copyright to new DEP5 format
+  * Update copyright years
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Tue, 05 Jan 2010 13:42:15 -0500
+
+libanyevent-perl (5.230-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sun, 20 Dec 2009 20:48:54 -0500
+
+libanyevent-perl (5.220-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sat, 05 Dec 2009 07:57:53 -0500
+
+libanyevent-perl (5.210-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Thu, 19 Nov 2009 07:49:00 -0500
+
+libanyevent-perl (5.202-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Thu, 15 Oct 2009 19:30:13 -0400
+
+libanyevent-perl (5.201-1) unstable; urgency=low
+
+  * New upstream release
+    + Fix regression on AnyEvent::Handle's on_starttls and on_stoptls
+    + common::sense 2.0 could cause tcp_server to throw an exception
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Tue, 29 Sep 2009 19:33:25 -0400
+
+libanyevent-perl (5.200-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+    + Be more lenient when parsing resolv.conf files
+    + Use same set of warnings as common::sense 2.0
+    + Fix potential 32bit overflow issue due to perl having problems
+      with large hex constants in the Perl backend
+    + Optionally uses Async::Interrupt 1.02
+    + Replace OpenDNS fallbacks by Verizon/Level3 public DNS
+    + No longer supports register_read_type and register_write_type
+      in AnyEvent::Handle
+    + New options for AE::Handle: "keepalive" and "oobinline"
+  * Recommends libasync-interrupt-perl
+  * Reference the public list archives for the copyright mail
+
+  [ Ryan Niebur ]
+  * Update jawnsy's email address
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Fri, 18 Sep 2009 19:37:15 -0400
+
+libanyevent-perl (5.112-1) unstable; urgency=low
+
+  * New upstream release
+    + Bug fix: AnyEvent::Handle could cause hard crashes in Net::SSLeay
+      when using starttls with an illegal/uncreatable tls context
+
+ -- Jonathan Yu <frequency@cpan.org>  Fri, 21 Aug 2009 13:00:57 -0400
+
+libanyevent-perl (5.111-1) unstable; urgency=low
+
+  [ Jonathan Yu]
+  * New upstream releases (4.870 - 4.910)
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Changed: Replace versioned (build-)dependency on
+    perl (>= 5.6.0-{12,16}) with an unversioned dependency on perl (as
+    permitted by Debian Policy 3.8.3).
+
+  [ Maximilian Gass ]
+  * New upstream release
+   * Added libguard-perl to Suggests
+   * Removed libevent-perl from Recommends, no longer preferred
+  * Changed writing of my last name in debian/control
+  * Bumped Standards-Version to 3.8.3
+
+ -- Maximilian Gass <mxey@cloudconnected.org>  Wed, 19 Aug 2009 01:33:33 +0200
+
+libanyevent-perl (4.860-1) unstable; urgency=low
+
+  * New upstream release
+    + Work around signal handling races in Event and Event::Lib
+    + Try aligning signal-race timer to full-second boundaries
+
+ -- Jonathan Yu <frequency@cpan.org>  Tue, 21 Jul 2009 11:05:43 -0400
+
+libanyevent-perl (4.850-1) unstable; urgency=low
+
+  * New upstream release
+    + Now detects recursive blocking waits and croaks
+    + Ignore possible spurious wake-ups in tcp_connect
+    + Fix signal race problem (see $AnyEvent::MAX_SIGNAL_LATENCY)
+    + Time::HiRes and Guard are loaded on-demand
+    + Reduce memory usage
+
+ -- Jonathan Yu <frequency@cpan.org>  Sat, 18 Jul 2009 09:09:53 -0400
+
+libanyevent-perl (4.820-1) unstable; urgency=low
+
+  * New upstream release
+    + Workaround for a race condition in perl's select() call
+    + Bug fix -- POE and Event backends didn't accept some callable
+      objects as callbacks
+  * Copyright information moved back into d/copyright per ftp-master
+    Frank Lichtenheld <djpig@debian.org>
+
+ -- Jonathan Yu <frequency@cpan.org>  Sat, 11 Jul 2009 12:29:09 -0400
+
+libanyevent-perl (4.810-1) unstable; urgency=low
+
+  * New upstream release
+    + Various bug fixes and feature additions
+
+ -- Jonathan Yu <frequency@cpan.org>  Thu, 09 Jul 2009 12:04:49 -0400
+
+libanyevent-perl (4.800-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+    + Various bug fixes and feature additions
+
+  [ gregor herrmann ]
+  * debian/control: add packages for modules that are 'recommended' by
+    upstream to Suggests:.
+
+ -- Jonathan Yu <frequency@cpan.org>  Tue, 07 Jul 2009 10:59:26 -0400
+
+libanyevent-perl (4.451-1) unstable; urgency=low
+
+  * New upstream release
+    + Small bug fix (fixes breakage of AnyEvent::HTTP when shutting down
+      an AnyEvent::Handle)
+
+ -- Jonathan Yu <frequency@cpan.org>  Fri, 03 Jul 2009 06:28:47 -0400
+
+libanyevent-perl (4.450-1) unstable; urgency=low
+
+  * New upstream release
+    + Documentation patches
+    + Bug fixes (a write error could cause AnyEvent::Handle to create an I/O
+      watcher with an undefined $fh)
+    + Speed improvements
+
+ -- Jonathan Yu <frequency@cpan.org>  Tue, 30 Jun 2009 06:04:21 -0400
+
+libanyevent-perl (4.420-1) unstable; urgency=low
+
+  * New upstream release
+    + New 'untaint' attribute
+    + Resets SIGCHLD signal handler so that child status is caught
+    + some preliminary support for IO::Async (libio-async-perl)
+    + Documentation and stuff
+  * whatis patch removed, as it was fixed upstream
+  * Renamed perl_path patch to perl-path.patch, added headers
+  * Upgraded to Standards-Version 3.8.2
+  * Using short d/rules format
+
+  [ Nathan Handler ]
+  * debian/watch: Update to ignore development releases.
+
+ -- Jonathan Yu <frequency@cpan.org>  Fri, 26 Jun 2009 08:43:00 -0400
+
+libanyevent-perl (4.410-1) unstable; urgency=low
+
+  * New upstream release (no new dependencies)
+  * Forwarded whatis copyright bug (RT#46224)
+  * Fixed copyright file
+    -> Moved copyright e-mail to its own file; I'm not sure how it fits into
+       the whole machine readable copyright stuff
+    -> Forwarded copyright issue (RT#46226)
+  * Cleaned up control file description
+
+ -- Jonathan Yu <frequency@cpan.org>  Tue, 19 May 2009 14:33:34 -0400
+
+libanyevent-perl (4.400-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 27 Apr 2009 18:06:02 +0200
+
+libanyevent-perl (4.352-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ansgar Burchardt <ansgar@43-1.org>  Fri, 24 Apr 2009 18:14:47 +0200
+
+libanyevent-perl (4.351-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add myself to Uploaders.
+
+ -- Ansgar Burchardt <ansgar@43-1.org>  Wed, 15 Apr 2009 22:57:08 +0200
+
+libanyevent-perl (4.350-1) unstable; urgency=low
+
+  * New upstream release.
+  * Set Standards-Version to 3.8.1 (no changes).
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 29 Mar 2009 15:48:17 +0200
+
+libanyevent-perl (4.340-1) unstable; urgency=low
+
+  [ Martín Ferrari ]
+  * debia/watch: add uversionmangle to cope with non-sane versioning.
+
+  [ gregor herrmann ]
+  * New upstream release.
+  * Update debian/patches/perl_path.
+  * Install all examples.
+  * Add debian/README.source to document quilt usage, as required by
+    Debian Policy since 3.8.0.
+  * Add /me to Uploaders.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 10 Mar 2009 19:27:34 +0100
+
+libanyevent-perl (4.331-1) unstable; urgency=low
+
+  * Initial Release (closes: #496904).
+
+ -- Maximilian Gaß <mxey@cloudconnected.org>  Mon, 19 Jan 2009 00:20:11 +0100
