@@ -671,13 +671,10 @@ sub _parse_hosts($) {
    }
 }
 
-# helper function - unless dns delivered results, check and parse hosts, then call continuation code
-sub _load_hosts_unless(&$@) {
-   my ($cont, $cv, @dns) = @_;
+# helper function - check and parse hosts, then call continuation code
+sub _load_hosts(&$) {
+   my ($cont, $cv) = @_;
 
-   if (@dns) {
-      $cv->end;
-   } else {
       my $etc_hosts = length $ENV{PERL_ANYEVENT_HOSTS} ? $ENV{PERL_ANYEVENT_HOSTS}
                       : AnyEvent::WIN32                ? "$ENV{SystemRoot}/system32/drivers/etc/hosts"
                       :                                  "/etc/hosts";
@@ -706,7 +703,6 @@ sub _load_hosts_unless(&$@) {
             }
          });
       }
-   }
 }
 
 sub resolve_sockaddr($$$$$$) {
@@ -783,39 +779,46 @@ sub resolve_sockaddr($$$$$$) {
          } else {
             $node =~ y/A-Z/a-z/;
 
+            # hosts takes precedence over dns
+            _load_hosts {
+
+			# Look up our hosts entry after we've attempted to load /etc/hosts
             my $hosts = $HOSTS{$node};
 
             # a records
             if ($family != 6) {
+            if (@{ $hosts->[0] }) {
+                push @res,
+                  map [$idx, "ipv4", [AF_INET , $type, $proton, pack_sockaddr $port, $_]],
+                    @{ $hosts->[0] };
+            }
+            else {
                $cv->begin;
                AnyEvent::DNS::a $node, sub {
                   push @res, [$idx, "ipv4", [AF_INET , $type, $proton, pack_sockaddr $port, parse_ipv4 $_]]
                      for @_;
-
-                  # dns takes precedence over hosts
-                  _load_hosts_unless {
-                     push @res,
-                        map [$idx, "ipv4", [AF_INET , $type, $proton, pack_sockaddr $port, $_]],
-                           @{ $hosts->[0] };
-                  } $cv, @_;
                };
+            }
             }
 
             # aaaa records
             if ($family != 4) {
+            if (@{ $hosts->[1] }) {
+                push @res,
+                  map [$idx + 0.5, "ipv6", [AF_INET6, $type, $proton, pack_sockaddr $port, $_]],
+                    @{ $hosts->[1] };
+            }
+            else {
                $cv->begin;
                AnyEvent::DNS::aaaa $node, sub {
                   push @res, [$idx, "ipv6", [AF_INET6, $type, $proton, pack_sockaddr $port, parse_ipv6 $_]]
                      for @_;
-
-                  _load_hosts_unless {
-                     push @res,
-                        map [$idx + 0.5, "ipv6", [AF_INET6, $type, $proton, pack_sockaddr $port, $_]],
-                           @{ $hosts->[1] }
-                  } $cv, @_;
                };
             }
-         }
+            }
+
+            } $cv;
+        }
       }
       $cv->end;
    };
