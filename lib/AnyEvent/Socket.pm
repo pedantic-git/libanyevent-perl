@@ -797,6 +797,7 @@ sub resolve_sockaddr($$$$$$) {
                AnyEvent::DNS::a $node, sub {
                   push @res, [$idx, "ipv4", [AF_INET , $type, $proton, pack_sockaddr $port, parse_ipv4 $_]]
                      for @_;
+                  $cv->end;
                };
             }
             }
@@ -813,6 +814,7 @@ sub resolve_sockaddr($$$$$$) {
                AnyEvent::DNS::aaaa $node, sub {
                   push @res, [$idx, "ipv6", [AF_INET6, $type, $proton, pack_sockaddr $port, parse_ipv6 $_]]
                      for @_;
+                  $cv->end;
                };
             }
             }
